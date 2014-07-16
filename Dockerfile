@@ -13,7 +13,7 @@ RUN \
 	sudo apt-get install -y oracle-java7-installer -qq
 
 # Install Selenium
-RUN wget http://selenium-release.storage.googleapis.com/2.42/selenium-server-standalone-2.42.2.jar
+ADD http://selenium-release.storage.googleapis.com/2.42/selenium-server-standalone-2.42.2.jar selenium-server-standalone.jar
 
 # for run
 CMD ["/sbin/my_init"]

@@ -1,11 +1,12 @@
-IMAGE     := "shouldbee/selenium"
-CONTAINER := "selenium"
+IMAGE     := shouldbee/selenium
+CONTAINER := selenium
+TAG       := 2.42.2
 
 build:
-	sudo docker build -t=$(IMAGE) .
+	sudo docker build -t=$(IMAGE):$(TAG) .
 
 create:
-	sudo docker run -v /vagrant:/vagrant -i -t -d -p 80:80 --name $(CONTAINER) $(IMAGE) /bin/bash
+	sudo docker run -i -t -d -p 4444:4444 --name $(CONTAINER) $(IMAGE) /bin/bash
 
 start:
 	sudo docker start $(CONTAINER)
